@@ -1,0 +1,25 @@
+#:import Clipboard kivy.core.clipboard.Clipboard
+<Password_Style>:
+    RelativeLayout:
+        pos: root.pos
+        size: root.size
+        MDBoxLayout:
+            orientation: "vertical"
+            MDLabel:
+                text:'Привет, чтобы получить пароль нажмите "Обновить"'
+                id:lable_text_vm
+                halign: "center"
+            MDRectangleFlatButton:
+                text:'Обновить'
+                theme_text_color: "Custom"
+                text_color: "white"
+                line_color: "white"
+                size_hint_y: None
+                size_hint_x: 1
+                on_press: root.press_button()
+                on_release:
+                    Clipboard.copy(lable_text_vm.text)
+            
+
+        
+    
